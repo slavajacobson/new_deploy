@@ -1,5 +1,11 @@
+require "rvm/capistrano"
 require "bundler/capistrano"
- 
+
+set :default_environment, {
+
+'PATH' => "$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+}
+
 server "198.98.52.43", :web, :app, :db, primary: true
  
 set :application, "nspug"
@@ -19,7 +25,7 @@ ssh_options[:forward_agent] = true
 after "deploy", "deploy:cleanup" # keep only the last 5 releases
  
 namespace :deploy do
-  %w[start stop restart].each do |command|
+  %w[stop start restart].each do |command|
     desc "#{command} unicorn server"
     task command, roles: :app, except: {no_release: true} do
       run "/etc/init.d/unicorn_#{application} #{command}"
