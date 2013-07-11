@@ -1,0 +1,13 @@
+<%= link_to 'new', new_map_path %>
+<ul>
+	<% @maps.each do |map| %>
+		<li style="border:1px solid black;">
+			<%= map.name %>
+		
+			<%= image_tag map.image %>
+
+			<%= link_to 'delete', map_path(map), method: :delete, confirm: 'you sure??' %>
+		</li>
+
+	<% end %>
+</ul>

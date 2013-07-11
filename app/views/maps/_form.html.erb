@@ -1,0 +1,17 @@
+<%= form_for @map do |f| %>
+	<%#= f.error_messages %>
+	<%= f.hidden_field :id %>
+
+	<p>
+		<%= f.label :name %><br />
+		<%= f.text_field :name %>
+	</p>
+	<p>
+		<%= f.file_field :image %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+
+<% end %>
