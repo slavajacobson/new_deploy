@@ -1,4 +1,6 @@
 Nspug::Application.routes.draw do
+  resources :maps
+
   resources :awards
   #match "awards/index" => "awards#index", via: :get
   # The priority is based upon order of creation: first created -> highest priority.
