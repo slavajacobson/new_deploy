@@ -42,6 +42,7 @@ gem 'unicorn'
 gem 'capistrano', group: :development
 gem 'rvm-capistrano', group: :development
 
+gem 'rmagick'
 gem 'carrierwave'
 # Use debugger
 # gem 'debugger', group: [:development, :test]
