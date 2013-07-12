@@ -9,8 +9,8 @@ class MapsController < ApplicationController
 
 	def create
 		@map = Map.create(map_params)
-		flash[:notice] =  "Map #{@map.name} succesfully created!"
-		redirect_to maps_path
+		# flash[:notice] =  "Map #{@map.name} succesfully created!"
+		# redirect_to maps_path
 	end
 
 	def update

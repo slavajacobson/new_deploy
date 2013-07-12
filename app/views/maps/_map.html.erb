@@ -1,0 +1,7 @@
+<li style="border:1px solid black;">
+	<%= map.name %>
+
+	<%= image_tag map.image_url(:thumb).to_s %>
+
+	<%= link_to 'delete', map_path(map), method: :delete, confirm: 'you sure??' %>
+</li>

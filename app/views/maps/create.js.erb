@@ -1,0 +1,5 @@
+<% if @map.new_record? %>
+	alert("Failed to upload painting: <%= @map.errors.full_messages.join(', ').html() %>");
+<% else %>
+	$("#maps").append("<%= j render(@map) %>");
+<% end %>

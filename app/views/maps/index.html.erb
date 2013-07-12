@@ -1,13 +1,21 @@
 <%= link_to 'new', new_map_path %>
-<ul>
-	<% @maps.each do |map| %>
-		<li style="border:1px solid black;">
-			<%= map.name %>
-		
-			<%= image_tag map.image_url(:thumb).to_s %>
-
-			<%= link_to 'delete', map_path(map), method: :delete, confirm: 'you sure??' %>
-		</li>
-
-	<% end %>
+<ul id="maps">
+	<%= render @maps %>
 </ul>
+
+
+
+<%= form_for Map.new do |f| %>
+	<%= f.label :image, "Upload Images:" %>
+	<%= f.file_field :image, multiple: true, name: "map[image]" %>
+<% end %>
+
+<script id="template-upload" type="text/x-tmpl">
+	<div class="upload">
+		{%=o.name%}
+		<div class="progress">
+			<div class="bar" style="border:1px solid black; width: 0%"></div>
+		</div>
+	</div>
+
+</script>
